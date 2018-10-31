@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.kioye.notepad.view.MainView">
+   <children>
+      <VBox minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0">
+               <children>
+                  <MenuBar layoutX="-4.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="文件(F)">
+                           <items>
+                              <MenuItem fx:id="newFile" mnemonicParsing="false" onAction="#onTopMenu" text="新建(N)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#onTopMenu" text="打开(O)...">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#onTopMenu" text="保存(S)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="reSaveFile" mnemonicParsing="false" onAction="#onTopMenu" text="另存为(A)...">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="menuHide" mnemonicParsing="false" onAction="#onTopMenu" text="隐藏(H)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#onTopMenu" text="退出(X)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="编辑(E)">
+                           <items>
+                              <MenuItem fx:id="menuCancel" mnemonicParsing="false" onAction="#onTopMenu" text="撤销(U)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem fx:id="menuShear" mnemonicParsing="false" onAction="#onTopMenu" text="剪切(T)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuCopy" mnemonicParsing="false" onAction="#onTopMenu" text="复制(C)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuPaste" mnemonicParsing="false" onAction="#onTopMenu" text="粘贴(P)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuDel" mnemonicParsing="false" onAction="#onTopMenu" text="删除(L)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuSearch" mnemonicParsing="false" onAction="#onTopMenu" text="查找(F)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuSearchNext" mnemonicParsing="false" onAction="#onTopMenu" text="查找下一个(N)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F3" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuReplace" mnemonicParsing="false" onAction="#onTopMenu" text="替换(R)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuDrop" mnemonicParsing="false" onAction="#onTopMenu" text="转到(G)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuCheckAll" mnemonicParsing="false" onAction="#onTopMenu" text="全选(A)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="menuInsertDate" mnemonicParsing="false" onAction="#onTopMenu" text="时间/日期(D)">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="T" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="格式(O)">
+                           <items>
+                              <CheckMenuItem fx:id="autoLinefeed" mnemonicParsing="false" onAction="#onTopMenu" selected="true" text="自动换行(W)" />
+                              <MenuItem fx:id="fontStyle" mnemonicParsing="false" onAction="#onTopMenu" text="字体样式(F)..." />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="查看(V)">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onTopMenu" text="全屏" />
+                              <MenuItem mnemonicParsing="false" onAction="#onTopMenu" text="窗口" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="帮助(H)">
+                           <items>
+                              <MenuItem fx:id="menuClearTokenId" mnemonicParsing="false" onAction="#onTopMenu" text="清除tokenId" />
+                              <MenuItem fx:id="menuLog" mnemonicParsing="false" onAction="#onTopMenu" text="打开日志" />
+                              <MenuItem fx:id="menuReset" mnemonicParsing="false" onAction="#onTopMenu" text="重置数据" />
+                              <MenuItem fx:id="menuCheckUpdate" mnemonicParsing="false" onAction="#onTopMenu" text="检测更新" />
+                              <MenuItem fx:id="menuHelp" mnemonicParsing="false" onAction="#onTopMenu" text="查看帮助" />
+                              <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#onTopMenu" text="关于Notepad" />
+                           </items>
+                        </Menu>
+                     </menus>
+                     <padding>
+                        <Insets bottom="3.0" left="10.0" right="3.0" top="3.0" />
+                     </padding>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+               <children>
+                  <Text fill="#7c8f84" layoutX="80.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请将文件拖入此处，或者 菜单栏-&gt;文件(F)-&gt;新建(N)或打开(O)">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <TabPane fx:id="tabs" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab>
+                           <graphic>
+                              <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="新建文本文档" textAlignment="CENTER">
+                                       <padding>
+                                          <Insets right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 8;" text="X" textFill="#b56a6a">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <content>
+                              <VBox minHeight="-Infinity" minWidth="-Infinity">
+                                 <children>
+                                    <TextArea prefHeight="338.0" style="-fx-background-color: #343434;" text="qwerwqrewqerwqerwqerwqrw链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9qerwqrw" wrapText="true">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </TextArea>
+                                    <HBox alignment="CENTER_LEFT" style="-fx-border-color: gray;">
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" text="Aa" textFill="#837e7e">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <TextField minWidth="-Infinity" prefHeight="27.0" prefWidth="451.0" promptText="输入你要查找的内容">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" text="查找">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button layoutX="378.0" layoutY="47.0" mnemonicParsing="false" text="查找上一个">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button layoutX="414.0" layoutY="47.0" mnemonicParsing="false" text="查找全部">
+                                             <HBox.margin>
+                                                <Insets right="8.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" style="-fx-background-radius: 8;" text="X" textFill="#b56a6a">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="2.0" left="8.0" right="8.0" top="4.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label cacheShape="false" centerShape="false" layoutX="10.0" layoutY="10.0" minWidth="200.0" scaleShape="false" text="字符数：1231  行数：10">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label alignment="CENTER" prefWidth="210.0" text="上次修改：2018-07-20 19:06:23" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefWidth="330.0" text="  保存成功：/caolijian/document/新建文本.txt" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="3.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                        <Tab>
+                           <graphic>
+                              <HBox minHeight="-Infinity" minWidth="-Infinity">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="新建文本文档2" textAlignment="CENTER">
+                                       <padding>
+                                          <Insets right="4.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 8;" text="X">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <content>
+                              <VBox minHeight="-Infinity" minWidth="-Infinity">
+                                 <children>
+                                    <TextArea prefHeight="338.0" text="qwerwqrewqerwqerwqerwqrw链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9链接:https://pan.baidu.com/s/1w33MhPY3lzRDbpo1LTvPfA  密码:jd84链接: https://pan.baidu.com/s/17wE6QXzwx5JNnbVRg4c3Pw 密码: gss9qerwqrw" wrapText="true">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </TextArea>
+                                    <HBox alignment="CENTER_LEFT" style="-fx-border-color: gray;">
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" text="Aa" textFill="#837e7e">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <TextField minWidth="-Infinity" prefHeight="27.0" prefWidth="243.0" promptText="输入你要查找的内容">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField layoutX="56.0" layoutY="15.0" minWidth="-Infinity" prefHeight="27.0" prefWidth="243.0" promptText="输入你要替换的内容">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" text="查找">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button layoutX="378.0" layoutY="47.0" mnemonicParsing="false" text="替换">
+                                             <HBox.margin>
+                                                <Insets right="6.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button layoutX="414.0" layoutY="47.0" mnemonicParsing="false" text="替换全部">
+                                             <HBox.margin>
+                                                <Insets right="8.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" style="-fx-background-radius: 8;" text="X" textFill="#b56a6a">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="2.0" left="8.0" right="8.0" top="4.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label layoutX="10.0" layoutY="10.0" text="字符数：1231  行数：10">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label text="  上次修改：2018-07-20 19:06:23" />
+                                          <Label layoutX="10.0" layoutY="10.0" maxWidth="300.0" text="  保存成功：/caolijian/document/新建文本.txt" textOverrun="CENTER_ELLIPSIS" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

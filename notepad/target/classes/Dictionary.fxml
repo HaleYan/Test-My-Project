@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.kioye.notepad.view.DictionaryView">
+   <children>
+      <Button layoutX="236.0" layoutY="371.0" mnemonicParsing="false" onAction="#onSave" text="提交" textFill="#1e84bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="308.0" layoutY="371.0" mnemonicParsing="false" onAction="#onCancel" text="取消" textFill="#bc2727">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Slider fx:id="fontSizeSlider" layoutX="295.0" layoutY="102.0" majorTickUnit="5.0" max="30.0" min="5.0" minorTickCount="5" prefHeight="38.0" prefWidth="198.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <TextField fx:id="fontSizeText" layoutX="188.0" layoutY="97.0" prefHeight="27.0" prefWidth="97.0" promptText="请输入数字" />
+      <Label layoutX="100.0" layoutY="101.0" text="字体大小">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ColorPicker fx:id="fontColorPicker" editable="true" layoutX="188.0" layoutY="147.0" />
+      <Label layoutX="100.0" layoutY="151.0" text="字体颜色">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="115.0" layoutY="275.0" text="示例">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="232.0" text="背景颜色">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ColorPicker fx:id="fontBgColorPicker" editable="true" layoutX="188.0" layoutY="228.0" />
+      <Slider fx:id="fontOpacitySlider" layoutX="294.0" layoutY="192.0" majorTickUnit="1.0" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <TextField fx:id="fontOpacityText" layoutX="187.0" layoutY="187.0" prefHeight="27.0" prefWidth="97.0" promptText="请输入数字" />
+      <Label layoutX="99.0" layoutY="191.0" text="字体透明度">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Pane fx:id="fontPane" layoutX="188.0" layoutY="275.0" prefHeight="84.0" prefWidth="294.0" style="-fx-border-color: #456456;">
+         <children>
+            <Text fx:id="fontPattern" layoutX="57.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="字体样式" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
